@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OMNI</title>
+<meta name="description" content="OMNI — see, listen and act with your iPhone, iPad and Mac. Vision, voice, gestures, motion, scanning and automations, processed on your device.">
+<meta name="theme-color" content="#050b1a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="OMNI">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<div id="app">
+  <aside id="sidebar" aria-label="Sections">
+    <div class="brand">
+      <canvas class="orb" data-size="34" aria-hidden="true"></canvas>
+      <div><div class="brand-name">OMNI</div><div class="brand-sub" id="brandSub">Web edition</div></div>
+    </div>
+    <nav id="nav"></nav>
+    <button class="link-foot" id="footStatus" type="button"></button>
+  </aside>
+
+  <main id="main" tabindex="-1"></main>
+
+  <nav id="dock" aria-label="Main sections"></nav>
+</div>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-backdrop" data-close></div>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div class="sheet-head"><h2 id="sheetTitle"></h2><button class="icon-btn" data-close aria-label="Close" type="button">✕</button></div>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+</div>
+
+<div id="confirm" class="confirm" hidden>
+  <div class="confirm-card" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <div class="confirm-icon" id="confirmIcon">!</div>
+    <h2 id="confirmTitle"></h2>
+    <p id="confirmMsg"></p>
+    <div class="row center">
+      <button class="btn ghost" id="confirmNo" type="button">Cancel</button>
+      <button class="btn primary" id="confirmYes" type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<label class="haptic-switch" aria-hidden="true"><input type="checkbox" switch id="haptic" tabindex="-1"></label>
+
+<script src="js/core.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/actions.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/vision.js"></script>
+<script src="js/scanner.js"></script>
+<script src="js/gesture.js"></script>
+<script src="js/spatial.js"></script>
+<script src="js/automation.js"></script>
+<script src="js/workshop.js"></script>
+<script src="js/control.js"></script>
+<script src="js/discover.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/boot.js"></script>
+</body>
+</html>
